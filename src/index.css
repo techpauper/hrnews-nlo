@@ -1,6 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +93,49 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+  p, a, li, span {
+    @apply font-sans;
+  }
+  
+  .newspaper-container {
+    @apply max-w-screen-xl mx-auto px-4 md:px-8;
+  }
+  
+  .newspaper-title {
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold font-serif tracking-tight leading-none;
+  }
+  
+  .newspaper-subtitle {
+    @apply text-xl md:text-2xl font-serif font-medium text-gray-700 mt-2;
+  }
+  
+  .newspaper-date {
+    @apply text-sm uppercase tracking-wider text-gray-500 mt-3 border-b border-t py-2 inline-block;
+  }
+  
+  .newspaper-lead {
+    @apply text-lg md:text-xl font-serif leading-relaxed mt-6;
+  }
+  
+  .newspaper-body {
+    @apply font-sans text-base leading-7 mt-6 text-gray-800;
+  }
+  
+  .newspaper-columns-2 {
+    @apply md:columns-2 gap-8;
+  }
+  
+  .newspaper-columns-3 {
+    @apply lg:columns-3 gap-8;
+  }
+  
+  .page-transition {
+    @apply animate-fade-in;
   }
 }
