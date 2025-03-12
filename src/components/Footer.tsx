@@ -8,13 +8,19 @@ const Footer = () => {
       <div className="newspaper-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-serif text-lg font-bold mb-4">The Homeowner's Chronicle</h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/b65a8c2c-c870-4193-be9d-05ba7523c72f.png" 
+                alt="Homeowners Rights Logo" 
+                className="h-10 mr-2"
+              />
+            </div>
             <p className="text-gray-600 mb-4">
               Providing homeowners with valuable information about their rights, 
               responsibilities, and resources to protect their most valuable asset.
             </p>
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} The Homeowner's Chronicle. All rights reserved.
+              © {new Date().getFullYear()} Homeowners Rights. All rights reserved.
             </p>
           </div>
           

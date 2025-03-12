@@ -11,10 +11,12 @@ const Header = () => {
     <header className="border-b border-gray-200 bg-white">
       <div className="newspaper-container py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="transform transition-transform hover:scale-[1.01]">
-            <h1 className="text-2xl md:text-4xl font-serif font-bold tracking-tighter">
-              The Homeowner's Chronicle
-            </h1>
+          <Link to="/" className="transform transition-transform hover:scale-[1.01] flex items-center">
+            <img 
+              src="/lovable-uploads/b65a8c2c-c870-4193-be9d-05ba7523c72f.png" 
+              alt="Homeowners Rights Logo" 
+              className="h-14 mr-2"
+            />
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">

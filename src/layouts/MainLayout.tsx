@@ -12,8 +12,8 @@ const MainLayout = ({ children, title }: MainLayoutProps) => {
   useEffect(() => {
     // Update page title
     document.title = title 
-      ? `${title} | The Homeowner's Chronicle` 
-      : "The Homeowner's Chronicle";
+      ? `${title} | Homeowners Rights` 
+      : "Homeowners Rights";
     
     // Scroll to top on route change
     window.scrollTo(0, 0);
