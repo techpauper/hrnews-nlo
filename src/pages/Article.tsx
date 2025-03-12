@@ -42,7 +42,7 @@ const Article = () => {
               <h2 className="newspaper-subtitle">{article.subtitle}</h2>
             )}
             <p className="newspaper-date">
-              {article.date} • by {article.author}
+              {article.date}
             </p>
           </div>
           

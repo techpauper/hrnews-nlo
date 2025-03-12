@@ -12,8 +12,11 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/b65a8c2c-c870-4193-be9d-05ba7523c72f.png" 
                 alt="Homeowners Rights Logo" 
-                className="h-10 mr-2"
+                className="h-8 mr-2"
               />
+              <span className="font-serif font-bold text-lg tracking-tight">
+                Homeowners Rights
+              </span>
             </div>
             <p className="text-gray-600 mb-4">
               Providing homeowners with valuable information about their rights, 

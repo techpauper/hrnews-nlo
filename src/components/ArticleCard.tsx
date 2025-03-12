@@ -41,19 +41,12 @@ const ArticleCard = ({ article, featured = false }: ArticleCardProps) => {
             )}
             
             <p className="text-sm uppercase tracking-wider text-gray-500">
-              {article.date} • by {article.author}
+              {article.date}
             </p>
             
             <p className="font-sans text-base md:text-lg text-gray-700 leading-relaxed">
               {article.excerpt}
             </p>
-            
-            <Link 
-              to={`/article/${article.id}`}
-              className="inline-block mt-4 font-serif italic text-black hover:underline"
-            >
-              Continue Reading →
-            </Link>
           </div>
         </div>
       </div>
@@ -74,19 +67,12 @@ const ArticleCard = ({ article, featured = false }: ArticleCardProps) => {
         </h3>
         
         <p className="text-xs uppercase tracking-wider text-gray-500">
-          {article.date} • by {article.author}
+          {article.date}
         </p>
         
         <p className="font-sans text-gray-700 line-clamp-3">
           {article.excerpt}
         </p>
-        
-        <Link 
-          to={`/article/${article.id}`}
-          className="inline-block font-serif italic text-black hover:underline text-sm"
-        >
-          Continue Reading →
-        </Link>
       </div>
     </article>
   );

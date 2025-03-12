@@ -15,8 +15,11 @@ const Header = () => {
             <img 
               src="/lovable-uploads/b65a8c2c-c870-4193-be9d-05ba7523c72f.png" 
               alt="Homeowners Rights Logo" 
-              className="h-14 mr-2"
+              className="h-12 mr-2"
             />
+            <span className="font-serif font-bold text-lg md:text-xl tracking-tight">
+              Homeowners Rights
+            </span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
