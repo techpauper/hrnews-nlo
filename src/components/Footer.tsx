@@ -11,8 +11,8 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <div className="flex items-center justify-center bg-primary rounded-lg p-2 mr-2">
-                <ScrollText className="h-5 w-5 text-primary-foreground" />
-                <Home className="h-5 w-5 text-primary-foreground ml-1" />
+                <Home className="h-5 w-5 text-primary-foreground" />
+                <ScrollText className="h-5 w-5 text-primary-foreground ml-1" />
               </div>
               <span className="font-serif font-bold text-lg tracking-tight">
                 Homeowners Rights
