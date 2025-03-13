@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { categories } from "@/data/articles";
+import { Home, Shield } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,11 +10,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/b65a8c2c-c870-4193-be9d-05ba7523c72f.png" 
-                alt="Homeowners Rights Logo" 
-                className="h-8 mr-2"
-              />
+              <div className="flex items-center justify-center bg-primary rounded-lg p-2 mr-2">
+                <Shield className="h-5 w-5 text-primary-foreground" />
+                <Home className="h-5 w-5 text-primary-foreground ml-1" />
+              </div>
             </div>
             <p className="text-gray-600 mb-4">
               Providing homeowners with valuable information about their rights, 
