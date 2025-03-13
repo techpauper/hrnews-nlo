@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Menu, X, Search, Home, Shield } from "lucide-react";
+import { Menu, X, Search, Home, ScrollText } from "lucide-react";
 import { useState } from "react";
 import { categories } from "@/data/articles";
 
@@ -13,10 +13,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="transform transition-transform hover:scale-[1.01] flex items-center">
             <div className="flex items-center justify-center bg-primary rounded-lg p-2 mr-2">
-              <Shield className="h-6 w-6 text-primary-foreground" />
+              <ScrollText className="h-6 w-6 text-primary-foreground" />
               <Home className="h-6 w-6 text-primary-foreground ml-1" />
             </div>
-            <span className="font-serif font-bold text-xl md:text-2xl tracking-tight sr-only">
+            <span className="font-serif font-bold text-xl tracking-tight">
               Homeowners Rights
             </span>
           </Link>

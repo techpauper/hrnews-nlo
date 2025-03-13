@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { categories } from "@/data/articles";
-import { Home, Shield } from "lucide-react";
+import { Home, ScrollText } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,9 +11,12 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <div className="flex items-center justify-center bg-primary rounded-lg p-2 mr-2">
-                <Shield className="h-5 w-5 text-primary-foreground" />
+                <ScrollText className="h-5 w-5 text-primary-foreground" />
                 <Home className="h-5 w-5 text-primary-foreground ml-1" />
               </div>
+              <span className="font-serif font-bold text-lg tracking-tight">
+                Homeowners Rights
+              </span>
             </div>
             <p className="text-gray-600 mb-4">
               Providing homeowners with valuable information about their rights, 
