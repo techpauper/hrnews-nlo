@@ -14,9 +14,6 @@ const Footer = () => {
                 alt="Homeowners Rights Logo" 
                 className="h-8 mr-2"
               />
-              <span className="font-serif font-bold text-lg tracking-tight">
-                Homeowners Rights
-              </span>
             </div>
             <p className="text-gray-600 mb-4">
               Providing homeowners with valuable information about their rights, 

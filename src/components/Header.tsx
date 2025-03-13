@@ -17,9 +17,6 @@ const Header = () => {
               alt="Homeowners Rights Logo" 
               className="h-12 mr-2"
             />
-            <span className="font-serif font-bold text-lg md:text-xl tracking-tight">
-              Homeowners Rights
-            </span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
