@@ -21,12 +21,7 @@ const Header = () => {
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
-            <Link 
-              to="/" 
-              className="text-gray-700 hover:text-black transition-colors font-sans text-sm uppercase tracking-wider"
-            >
-              Home
-            </Link>
+            {/* Home link removed from desktop view */}
             
             {categories.map((category) => (
               <Link 
