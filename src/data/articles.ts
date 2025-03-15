@@ -238,7 +238,9 @@ export const getArticleById = (id: string): Article | undefined => {
 };
 
 export const getArticlesByCategory = (categoryId: string): Article[] => {
-  return articles.filter(article => article.categoryId === categoryId);
+  return articles
+    .filter(article => article.categoryId === categoryId)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 export const getCategoryById = (id: string): Category | undefined => {
@@ -246,10 +248,25 @@ export const getCategoryById = (id: string): Category | undefined => {
 };
 
 export const getFeaturedArticles = (): Article[] => {
-  return articles.filter(article => article.featured);
+  return articles
+    .filter(article => article.featured)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 export const getRecentArticles = (count: number = 3): Article[] => {
-  // In a real app, this would sort by date
-  return [...articles].slice(0, count);
+  return [...articles]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, count);
+};
+
+export const searchArticles = (query: string): Article[] => {
+  const searchTerm = query.toLowerCase();
+  return articles
+    .filter(article => (
+      article.title.toLowerCase().includes(searchTerm) ||
+      article.excerpt.toLowerCase().includes(searchTerm) ||
+      article.content.toLowerCase().includes(searchTerm) ||
+      (article.subtitle && article.subtitle.toLowerCase().includes(searchTerm))
+    ))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };

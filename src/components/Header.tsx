@@ -1,11 +1,22 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Search, Home } from "lucide-react";
 import { useState } from "react";
 import { categories } from "@/data/articles";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery("");
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header className="border-b border-gray-200 bg-white">
@@ -38,12 +49,24 @@ const Header = () => {
               </Link>
             ))}
             
-            <button 
-              className="text-gray-700 hover:text-black transition-colors"
-              aria-label="Search"
-            >
-              <Search size={20} />
-            </button>
+            <div className="relative">
+              <form onSubmit={handleSearchSubmit} className="flex items-center">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search..."
+                  className="w-0 opacity-0 focus:w-44 focus:opacity-100 border-b border-transparent focus:border-gray-300 transition-all duration-300 outline-none px-2 py-1"
+                />
+                <button 
+                  type="submit"
+                  className="text-gray-700 hover:text-black transition-colors"
+                  aria-label="Search"
+                >
+                  <Search size={20} />
+                </button>
+              </form>
+            </div>
           </div>
           
           <button 
@@ -79,14 +102,18 @@ const Header = () => {
               </Link>
             ))}
             
-            <div className="relative mt-2">
+            <form onSubmit={handleSearchSubmit} className="relative mt-2">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles..."
                 className="w-full border border-gray-300 rounded-md py-2 px-4 pr-10 focus:outline-none focus:ring-1 focus:ring-black"
               />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-            </div>
+              <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <Search size={18} />
+              </button>
+            </form>
           </nav>
         </div>
       )}
