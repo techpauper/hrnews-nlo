@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Menu, X, Search, Home } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 import { useState } from "react";
 import { categories } from "@/data/articles";
 
@@ -37,13 +37,6 @@ const Header = () => {
                 {category.name}
               </Link>
             ))}
-            
-            <button 
-              className="text-gray-700 hover:text-black transition-colors"
-              aria-label="Search"
-            >
-              <Search size={20} />
-            </button>
           </div>
           
           <button 
@@ -78,15 +71,6 @@ const Header = () => {
                 {category.name}
               </Link>
             ))}
-            
-            <div className="relative mt-2">
-              <input
-                type="text"
-                placeholder="Search articles..."
-                className="w-full border border-gray-300 rounded-md py-2 px-4 pr-10 focus:outline-none focus:ring-1 focus:ring-black"
-              />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-            </div>
           </nav>
         </div>
       )}

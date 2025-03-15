@@ -13,16 +13,20 @@ const Index = () => {
       <section className="newspaper-container py-10">
         {/* Featured Articles */}
         <div className="mb-16">
+          <h2 className="font-serif text-2xl font-bold mb-6">Featured Articles</h2>
           {featuredArticles.map((article) => (
             <ArticleCard key={article.id} article={article} featured />
           ))}
         </div>
         
         {/* Recent Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {recentArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
+        <div className="mb-16">
+          <h2 className="font-serif text-2xl font-bold mb-6">Latest Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {recentArticles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+          </div>
         </div>
         
         {/* Categories Section */}

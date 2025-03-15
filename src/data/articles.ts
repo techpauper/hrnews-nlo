@@ -72,7 +72,7 @@ export const articles: Article[] = [
       </div>
     `,
     author: "Patricia Hernandez",
-    date: "May 15, 2023",
+    date: "2023-05-15",
     categoryId: "eviction",
     imageUrl: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
     featured: true
@@ -102,7 +102,7 @@ export const articles: Article[] = [
       </div>
     `,
     author: "Michael Rodriguez",
-    date: "June 3, 2023",
+    date: "2023-06-03",
     categoryId: "foreclosure",
     imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80",
     featured: true
@@ -134,7 +134,7 @@ export const articles: Article[] = [
       </div>
     `,
     author: "Sarah Johnson",
-    date: "July 12, 2023",
+    date: "2023-07-12",
     categoryId: "property-taxes",
     imageUrl: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
   },
@@ -165,7 +165,7 @@ export const articles: Article[] = [
       </div>
     `,
     author: "David Chen",
-    date: "August 7, 2023",
+    date: "2023-08-07",
     categoryId: "repairs",
     imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
   },
@@ -196,7 +196,7 @@ export const articles: Article[] = [
       </div>
     `,
     author: "Amara Williams",
-    date: "September 20, 2023",
+    date: "2023-09-20",
     categoryId: "discrimination",
     imageUrl: "https://images.unsplash.com/photo-1568385247005-0d371d214a2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
   },
@@ -227,18 +227,25 @@ export const articles: Article[] = [
       </div>
     `,
     author: "Robert Thompson",
-    date: "October 5, 2023",
+    date: "2023-10-05",
     categoryId: "repairs",
     imageUrl: "https://images.unsplash.com/photo-1559593184-a7d95bf8654f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80"
   }
 ];
+
+// Helper function to sort by date
+const sortByLatestDate = (articles: Article[]): Article[] => {
+  return [...articles].sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+};
 
 export const getArticleById = (id: string): Article | undefined => {
   return articles.find(article => article.id === id);
 };
 
 export const getArticlesByCategory = (categoryId: string): Article[] => {
-  return articles.filter(article => article.categoryId === categoryId);
+  return sortByLatestDate(articles.filter(article => article.categoryId === categoryId));
 };
 
 export const getCategoryById = (id: string): Category | undefined => {
@@ -246,10 +253,9 @@ export const getCategoryById = (id: string): Category | undefined => {
 };
 
 export const getFeaturedArticles = (): Article[] => {
-  return articles.filter(article => article.featured);
+  return sortByLatestDate(articles.filter(article => article.featured));
 };
 
 export const getRecentArticles = (count: number = 3): Article[] => {
-  // In a real app, this would sort by date
-  return [...articles].slice(0, count);
+  return sortByLatestDate(articles).slice(0, count);
 };
